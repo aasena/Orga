@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Calendar</ion-title>
+    <ion-buttons end>
+      <button (click)="profileSettings()" ion-button color="secondary" clear icon-left>
+        <ion-icon ios="ios-person" md="md-person"></ion-icon>
+        <p [hidden]="profile.verified_email">{{ profile }}</p>
+        <p [hidden]="!profile.verified_email">{{ profile.email }}</p>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+</ion-content>

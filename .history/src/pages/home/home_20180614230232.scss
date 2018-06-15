@@ -1,0 +1,77 @@
+page-home {
+
+ion-content {
+    background-color: #00e5ff;
+}
+
+ion-card-content {
+    background-color: #0277bd;
+}
+
+.content-md {
+    background-color: #00e5ff;
+}
+
+ion-card {
+    margin-top: 110px !important;
+    -webkit-box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14),0 6px 30px 5px rgba(0,0,0,0.12),0 8px 10px -7px rgba(0,0,0,0.2);
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14),0 6px 30px 5px rgba(0,0,0,0.12),0 8px 10px -7px rgba(0,0,0,0.2);
+}
+
+#google {
+    background-color: #ea4335;
+}
+
+#facebook {
+    background-color: #3b5998;
+}
+
+#welcome {
+    height: 150px;
+    width: 150px;
+    left: 50%;
+    margin-left: -75px;
+    position: absolute;
+}
+
+#collaboration {
+    height: 60px;
+    width: 60px;
+    left: 10%;
+    margin-left: -25px;
+    top: 13%;
+    margin-top: -10px;
+    position: absolute;
+}
+
+#diagram {
+    height: 60px;
+    width: 60px;
+    right: 10%;
+    margin-right: -25px;
+    top: 13%;
+    margin-top: -10px;
+    position: absolute;
+}
+
+#calendar {
+    height: 80px;
+    width: 80px;
+    left: 50%;
+    margin-left: -40px;
+    top: 82.5%;
+    position: absolute;
+}
+
+.white-text {
+    color: white !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.login-button {
+    background-color: #ef6c00 !important;
+}
+}

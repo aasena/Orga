@@ -6,16 +6,16 @@
       </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
-  <img src="../assets/imgs/login.png" id="login">
+<ion-content padding class="login-content">
+  <img src="assets/imgs/login.png" id="login">
   <ion-grid>
       <ion-row>
           <ion-col col-1></ion-col>
           <ion-col col-10>
-              <ion-card>
-                  <ion-card-content>
+              <ion-card class="login-card">
+                  <ion-card-content class="login-card-content">
                       <ion-grid class="white-text">
-                          <form [formGroup]="user" (ngSubmit)="login()">
+                          <form [formGroup]="user">
                               <ion-list>
                                   <ion-item>
                                       <ion-label floating>Email</ion-label>
@@ -26,14 +26,8 @@
                                       <ion-input type="password" formControlName="password" name="password"></ion-input>
                                   </ion-item>
                               </ion-list>
-                              <br>
-                              <div class="error" [hidden]="error.err">
-                                  <p>
-                                      {{ error.message }}
-                                  </p>
-                              </div>
                               <div padding class="text-center">
-                                  <button ion-button type="submit" class="login-button" full>Login</button>
+                                  <button ion-button type="submit" class="login-button" full (click)="login()">Login</button>
                               </div>
                           </form>
                       </ion-grid>

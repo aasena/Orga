@@ -1,48 +1,65 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { AuthService } from '../../providers/auth-service/auth-service';
-import { Dashboard } from '../dashboard/dashboard';
-
+import { Component } from "@angular/core";
+import { Validators, FormBuilder, FormGroup } from "@angular/forms";
+import { NavController, AlertController } from "ionic-angular";
+import { Dashboard } from "../dashboard/dashboard";
+import { AuthStorage } from "../../providers/auth/auth-storage";
+import { AuthService } from "../../providers/auth/auth-service";
 
 @Component({
-  selector: 'signup-page',
-  templateUrl: 'signup.html',
+  selector: "signup-page",
+  templateUrl: "signup.html"
 })
 export class Signup {
   private user: FormGroup;
-  error = {
-    message: "",
-    err: true
-  }; 
 
-  constructor(private nav: NavController, public auth: AuthService, private formBuilder: FormBuilder) {
+  constructor(
+    public alertCtrl: AlertController,
+    public navCtrl: NavController,
+    public storage: AuthStorage,
+    public service: AuthService,
+    private formBuilder: FormBuilder
+  ) {
     this.user = this.formBuilder.group({
-      email: ['', Validators.compose([Validators.required, Validators.email])],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
+      username: [
+        "",
+        Validators.compose([Validators.required, Validators.minLength(4)])
+      ],
+      email: ["", Validators.compose([Validators.required, Validators.email])],
+      password: [
+        "",
+        Validators.compose([Validators.required, Validators.minLength(6)])
+      ]
     });
   }
 
   return() {
-    this.nav.pop();
+    this.navCtrl.pop();
   }
 
   signup() {
     let data = this.user.value;
     if (!data.email) {
-			return;
-		};
+      return;
+    }
     let credentials = {
-			email: data.email,
-			password: data.password
+      username: data.username,
+      email: data.email,
+      password: data.password
     };
-    this.auth.doRegister(credentials)
-			.then (
-        () => this.nav.push(Dashboard),
-        error => {
-          this.error.message = error.message;
-          this.error.err = false;
-        }
-      );
+
+    this.service.registerSQL(data, {}).subscribe(data => {
+      if (data.success) {
+        this.storage.setProfile(credentials.email, "", false);
+        this.navCtrl.push(Dashboard);
+      } else {
+        const alert = this.alertCtrl.create({
+          title: "Credentials Error",
+          subTitle: data.message,
+          buttons: ["OK"]
+        });
+        alert.present();
+      }
+    });
+    this.storage.setProfile(credentials.email, credentials.username, false);
   }
 }

@@ -1,0 +1,54 @@
+page-home {
+  input {
+    color: white;
+  }
+
+  ion-card {
+    margin-top: 110px !important;
+  }
+
+  #login {
+    height: 150px;
+    width: 150px;
+    left: 50%;
+    margin-left: -75px;
+    position: absolute;
+  }
+
+  .login-button {
+    background-color: #ef6c00 !important;
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+
+  .item-md {
+    background-color: #0277bd !important;
+  }
+
+  .list-md .item-input:first-child {
+    border-bottom: 1px solid white !important;
+  }
+
+  .list-md .item-input:last-child {
+    border-bottom: 1px solid white !important;
+  }
+
+  .item-input .label-md,
+  .item-select .label-md,
+  .item-datetime .label-md {
+    color: white !important;
+  }
+
+  .error {
+    text-align: center;
+    border: #d50000 solid 1px;
+    background-color: #e8eaf61a;
+    border-radius: 5px;
+  }
+
+  .error p {
+    color: #b71c1c;
+  }
+}

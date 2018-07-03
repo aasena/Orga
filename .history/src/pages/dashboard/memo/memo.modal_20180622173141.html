@@ -1,0 +1,13 @@
+<ion-header>
+<ion-navbar>
+    <ion-buttons start (click)="dismiss()">
+        <ion-icon name="md-close" showWhen="android, windows"></ion-icon>        
+    </ion-buttons>
+    <ion-title class="text-center">Login</ion-title>
+</ion-navbar>
+</ion-header>
+  <ion-content>
+    <h1>{{ memo.date_time }}</h1>
+    <h2>{{ memo.memo }}</h2>
+    <h3>{{ memo.id_memo }}</h3>
+  </ion-content>

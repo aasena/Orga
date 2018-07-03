@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons start style="position: absolute;">
+            <button ion-button icon-only (click)="dismiss()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-title style="text-align: center">Raccolta </ion-title>
+
+        <ion-buttons end>
+            <button ion-button icon-only style="color: transparent">
+                <ion-icon name="search"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item class="text-center floating">
+        <ion-label class="text-center" color="note" floating>Titolo Nota</ion-label>
+        <ion-input class="text-center" [(ngModel)]="title"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+        <ion-textarea placeholder="Inserisci una nota" [(ngModel)]="note"></ion-textarea>
+    </ion-item>
+    <br>
+    <ion-item>
+        <ion-label>Nuova Raccolta</ion-label>
+        <ion-toggle [(ngModel)]="new"></ion-toggle>
+    </ion-item>
+    <ion-item class="text-center floating" [hidden]="!new">
+        <ion-label class="text-center" color="note" floating>Nuova Raccolta</ion-label>
+        <ion-input class="text-center" [(ngModel)]="newCollection"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item [hidden]="new">
+        <ion-label>Raccolta</ion-label>
+        <ion-select [(ngModel)]="collection">
+            <ion-option *ngFor="let coll of collections" [value]="coll.name">{{ coll }}</ion-option>
+        </ion-select>
+    </ion-item>
+    <br>
+    <button ion-button (click)="createNote()" color="note" full>Crea</button>
+</ion-content>

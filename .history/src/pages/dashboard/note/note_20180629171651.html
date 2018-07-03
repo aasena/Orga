@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Note</ion-title>
+    <ion-buttons end>
+      <button (click)="profileSettings()" ion-button color="secondary" clear icon-left>
+        <ion-icon ios="ios-person" md="md-person"></ion-icon>
+        <p>{{ profile.email }}</p>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="note-content">
+  <div (swipe)="swipe($event)" id="swipe">
+    <ion-list no-lines>
+      <ion-item class="text-center floating">
+        <ion-label class="text-center" color="note" floating>Titolo Nota</ion-label>
+        <ion-input class="text-center"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea placeholder="Inserisci una nota"></ion-textarea>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

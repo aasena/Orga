@@ -1,0 +1,61 @@
+page-memo {
+  .close {
+    width: 100%;
+    margin-top: -29px;
+    padding-bottom: 30px;
+  }
+
+  .icon-close {
+    margin-left: 100%;
+    cursor: pointer;
+  }
+
+  .memo-content {
+    background-color: #f44;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+
+  .browser-mockup {
+    border-top: 2em solid rgba(230, 230, 230, 0.7);
+    box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.4);
+    position: relative;
+    border-radius: 3px 3px 0 0;
+    margin-bottom: 15px;
+  }
+
+  .browser-mockup:before {
+    display: block;
+    position: absolute;
+    content: "";
+    top: -1.25em;
+    left: 1em;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background-color: #f44;
+    box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
+  }
+
+  .browser {
+    min-height: 50px;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+  }
+
+  .browser-content {
+    height: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .item-memo {
+    background-color: #f4f4f4 !important;
+    cursor: pointer;
+  }
+}

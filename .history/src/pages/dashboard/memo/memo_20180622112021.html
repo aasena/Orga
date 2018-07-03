@@ -1,0 +1,90 @@
+<!--
+  Generated template for the ClipboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Promemoria</ion-title>
+    <ion-buttons end>
+        <button (click)="profileSettings()" ion-button color="secondary" clear icon-left>
+          <ion-icon ios="ios-person" md="md-person"></ion-icon>
+          <p>{{ profile.email }}</p>
+        </button>
+  </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="memo-content">
+  <div (swipe)="swipe($event)" id="swipe">
+    <div class="browser-mockup">
+      <div class="browser">
+        <div class="browser-content">
+          <div class="item-memo" [hidden]="!notAdd">
+            <div class="close"><ion-icon class="close-icon" name="close" (click)="add()"></ion-icon></div>
+            <ion-item class="max-width">
+              <h2 class="text-center">Crea un Promemoria</h2>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Titolo</ion-label>
+              <ion-input type="text" [(ngModel)]="title"></ion-input>
+            </ion-item><br>
+            <ion-item>
+              <ion-label>Data</ion-label>
+              <ion-datetime displayFormat="DD/MM/YY" pickerFormat="D MMMM YYYY" [(ngModel)]="data"></ion-datetime>
+            </ion-item><br>
+            <ion-item>
+              <ion-label>Orario</ion-label>
+              <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="time"></ion-datetime>
+            </ion-item><br>
+            <button ion-button (click)="createAlarm()" color="memo" full>Crea</button>
+          </div>
+          <ion-item class="item-memo" [hidden]="notAdd" (click)="add()">
+            <ion-icon name="md-calendar" item-start color="memo"></ion-icon>
+              <span class="roboto-regular text-center">Aggiungi promemoria</span>
+            <ion-icon name="add" item-end color="secondary"></ion-icon>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+    <div class="browser-mockup">
+      <div class="browser">
+        <div class="browser-content">
+            <ion-list>
+                <ion-item-sliding>
+                  <ion-item class="item-memo" *ngFor="let memo of memos">
+                    <ion-avatar item-start>
+                      <img src="img/slimer.png">
+                    </ion-avatar>
+                    <h2>Slimer</h2>
+                  </ion-item>
+                  <ion-item-options side="left">
+                    <button ion-button color="primary">
+                      <ion-icon name="text"></ion-icon>
+                      Text
+                    </button>
+                    <button ion-button color="secondary">
+                      <ion-icon name="call"></ion-icon>
+                      Call
+                    </button>
+                  </ion-item-options>
+                  <ion-item-options side="right">
+                    <button ion-button color="primary">
+                      <ion-icon name="mail"></ion-icon>
+                      Email
+                    </button>
+                  </ion-item-options>
+                </ion-item-sliding>
+              </ion-list>
+          <div >
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

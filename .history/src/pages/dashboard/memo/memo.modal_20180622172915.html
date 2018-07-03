@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Description
+      </ion-title>
+      <ion-buttons start>
+        <button ion-button (click)="dismiss()">
+          <span ion-text color="primary" showWhen="ios">Cancel</span>
+          <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-header>
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">Chiudi</button>
+        </ion-buttons>
+        <ion-title class="text-center">Login</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content>
+    <h1>{{ memo.date_time }}</h1>
+    <h2>{{ memo.memo }}</h2>
+    <h3>{{ memo.id_memo }}</h3>
+  </ion-content>

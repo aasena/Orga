@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Note</ion-title>
+    <ion-buttons end>
+      <button (click)="profileSettings()" ion-button color="secondary" clear icon-left>
+        <ion-icon ios="ios-person" md="md-person"></ion-icon>
+        <p>{{ profile.email }}</p>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="note-content">
+  <div (swipe)="swipe($event)" id="swipe">
+    <div class="browser-mockup">
+      <div class="browser">
+        <div class="browser-content">
+          <ion-item class="text-center floating">
+            <ion-label class="text-center" color="note" floating>Titolo Nota</ion-label>
+            <ion-input class="text-center" [(ngModel)]="title"></ion-input>
+          </ion-item> <br>
+          <ion-item>
+            <ion-textarea placeholder="Inserisci una nota" [(ngModel)]="note"></ion-textarea>
+          </ion-item> <br>
+          <ion-item>
+            <ion-label>Nuova Raccolta</ion-label>
+            <ion-toggle [(ngModel)]="new"></ion-toggle>
+          </ion-item>
+          <ion-item class="text-center floating" [hidden]="!new">
+            <ion-label class="text-center" color="note" floating>Nuova Raccolta</ion-label>
+            <ion-input class="text-center" [(ngModel)]="newCollection"></ion-input>
+          </ion-item> <br>
+          <ion-item [hidden]="new">
+            <ion-label>Raccolta</ion-label>
+            <ion-select [(ngModel)]="collection">
+              <ion-option value="f">Raccolta 1</ion-option>
+              <ion-option value="m">Raccolta 2</ion-option>
+            </ion-select>
+          </ion-item> <br>
+          <button ion-button (click)="createNote()" color="note" full>Crea</button>
+        </div>
+      </div>
+    </div>
+    <div class="browser-mockup">
+      <div class="browser">
+        <div class="browser-content">
+          <ion-list>
+            <ion-item-divider *ngFor="let coll of collections; let i = index" (click)="toggle(i)">
+                {{ coll }}
+            </ion-item-divider>
+            <ion-item *ngFor="let note of Object.keys(notes)" [@expand]="active">
+              {{notes[note].title}}
+            </ion-item>
+          </ion-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

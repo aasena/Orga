@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Dash</ion-title>
+    <ion-buttons end>
+      <button (click)="profileSettings()" ion-button color="secondary" clear icon-left>
+        <ion-icon ios="ios-person" md="md-person"></ion-icon>
+        <p>{{ profile.email }}</p>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="home-content">
+  <div id="content" (swipe)="swipe($event)">
+    <div class="browser-mockup">
+      <div class="browser">
+        <div class="browser-content">
+          <ion-item class="item-home" (click)="addMemo()">
+            <ion-icon name="md-calendar" item-start color="memo"></ion-icon>
+            <span class="roboto-regular text-center">Aggiungi promemoria</span>
+            <ion-icon name="add" item-end color="secondary"></ion-icon>
+          </ion-item>
+          <ion-item class="item-home" (click)="addNote()">
+            <ion-icon name="bookmark" item-start color="note"></ion-icon>
+            <span class="roboto-regular text-center">Aggiungi nota</span>
+            <ion-icon name="add" item-end color="secondary"></ion-icon>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+
+    <div class="browser-mockup with-url" id="memo">
+      <div class="browser">
+        <div class="browser-content">
+          <ion-item class="item-memo" *ngFor="let memo of memos">
+            <ion-icon name="alarm" color="secondary" item-start></ion-icon>
+            <h3 class="title-memo">{{ memo.memo }}</h3>
+            <h4>{{ memo.date_time }}</h4>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+
+    <div class="browser-mockup with-url" id="note">
+      <div class="browser">
+        <div class="browser-content">
+          <ion-item *ngFor="let coll of collections; let i = index">
+            {{ coll.name }}
+          </ion-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

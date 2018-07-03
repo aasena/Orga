@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Note</ion-title>
+    <ion-buttons end>
+      <button (click)="profileSettings()" ion-button color="secondary" clear icon-left>
+        <ion-icon ios="ios-person" md="md-person"></ion-icon>
+        <p>{{ profile.email }}</p>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="note-content">
+  <div (swipe)="swipe($event)" id="swipe">
+    <div class="browser-mockup">
+      <div class="browser">
+        <div class="browser-content">
+          <ion-item class="text-center floating">
+            <ion-label class="text-center" color="note" floating>Titolo Nota</ion-label>
+            <ion-input class="text-center" [(ngModel></ion-input>
+          </ion-item> <br>
+          <ion-item>
+            <ion-textarea placeholder="Inserisci una nota"></ion-textarea>
+          </ion-item> <br>
+          <ion-item>
+            <ion-label>Nuova Raccolta</ion-label>
+            <ion-toggle [(ngModel)]="new"></ion-toggle>
+          </ion-item>
+          <ion-item class="text-center floating" [hidden]="!new">
+            <ion-label class="text-center" color="note" floating>Nuova Raccolta</ion-label>
+            <ion-input class="text-center"></ion-input>
+          </ion-item> <br>
+          <ion-item [hidden]="new">
+            <ion-label>Raccolta</ion-label>
+            <ion-select>
+              <ion-option value="f">Raccolta 1</ion-option>
+              <ion-option value="m">Raccolta 2</ion-option>
+            </ion-select>
+          </ion-item> <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

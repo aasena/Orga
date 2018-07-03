@@ -1,0 +1,44 @@
+<ion-header color="secondary">
+  <ion-navbar>
+      <ion-title class="text-center">Sign-Up</ion-title>
+      <ion-buttons end>
+          <button ion-button (click)="return()" style="color: transparent !important">Chiudi</button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="signup-content">
+  <img src="assets/imgs/signup.png" id="signup">
+  <ion-grid>
+      <ion-row>
+          <ion-col col-1></ion-col>
+          <ion-col col-10>
+              <ion-card class="signup-card">
+                  <ion-card-content class="signup-card-content">
+                      <ion-grid class="white-text">
+                          <form [formGroup]="user">
+                              <ion-list>
+                                    <ion-item>
+                                        <ion-label floating>Username</ion-label>
+                                        <ion-input type="text" formControlName="username" name="username"></ion-input>
+                                    </ion-item>
+                                    <ion-item>
+                                        <ion-label floating>Email</ion-label>
+                                        <ion-input type="email" formControlName="email" name="email"></ion-input>
+                                    </ion-item>
+                                    <ion-item>
+                                        <ion-label floating>Password</ion-label>
+                                        <ion-input type="password" formControlName="password" name="password"></ion-input>
+                                    </ion-item>
+                              </ion-list>
+                              <div padding class="text-center">
+                                  <button ion-button color="secondary" type="submit" full (click)="signup">Sign-Up</button>
+                              </div>
+                          </form>
+                      </ion-grid>
+                  </ion-card-content>
+              </ion-card>
+          </ion-col>
+          <ion-col col-1></ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

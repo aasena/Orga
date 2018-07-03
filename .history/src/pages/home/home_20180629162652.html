@@ -1,0 +1,42 @@
+<ion-content padding>
+  <img src="assets/imgs/welcome.png" id="welcome">
+  <img src="assets/imgs/collaboration.png" id="collaboration">
+  <img src="assets/imgs/diagram.png" id="diagram">
+  <img src="assets/imgs/calendar.png" id="calendar">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-1></ion-col>
+      <ion-col col-10>
+        <ion-card>
+          <ion-card-content>
+            <ion-grid class="white-text">
+              <ion-row>
+                <ion-col col-12 class="text-center">
+                  <h1 class="white-text roboto-bold">Benvenuto su Orga!</h1>
+                  <span class="roboto-regular">Pianifica le tue giornate con una semplice applicazione</span>
+                  <br>
+                  <br>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-5 class="text-center">
+                  <button ion-button (click)="login()" class="login-button" full>Login</button>
+                </ion-col>
+                <ion-col col-5 class="text-center">
+                  <button ion-button color="secondary" (click)="signup()" full>Sign-Up</button>
+                </ion-col>
+                <ion-col col-12 class="text-center">
+                  <button ion-button color="secondary" (click)="google()" full icon-end id="google">
+                    Google
+                    <ion-icon ios="logo-google" md="logo-google"></ion-icon>
+                  </button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-1></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

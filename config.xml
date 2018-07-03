@@ -90,5 +90,9 @@
         <variable name="REVERSE_CLIENT_ID" value="com.googleusercontent.apps.877633766779-a59jmb8v9s2p2ttci70ngh8p0ks8ddhl" />
     </plugin>
     <allow-navigation href="http://192.168.1.8:8100" />
+    <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.2" />
+    <plugin name="cordova-plugin-media" spec="^5.0.2" />
     <engine name="android" spec="7.0.0" />
+    <plugin name="cordova-clipboard" spec="^1.2.1" />
+    <plugin name="cordova-plugin-background-mode" spec="^0.7.2" />
 </widget>

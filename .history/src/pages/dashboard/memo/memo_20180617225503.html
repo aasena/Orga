@@ -1,0 +1,76 @@
+<!--
+  Generated template for the ClipboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Clipboard</ion-title>
+    <ion-buttons end>
+        <button (click)="profileSettings()" ion-button color="secondary" clear icon-left>
+          <ion-icon ios="ios-person" md="md-person"></ion-icon>
+          <p>{{ profile.email }}</p>
+        </button>
+  </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="memo-content">
+  <div (swipe)="swipe($event)" id="swipe">
+    <div class="browser-mockup">
+      <div class="browser">
+        <div class="browser-content">
+          <div class="item-home" [hidden]="!notAdd">
+            <div class="close"><ion-icon class="close-icon" name="close" (click)="add()"></ion-icon></div>
+            <ion-item class="max-width">
+              <h2 class="text-center">Crea un Promemoria</h2>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Oggetto</ion-label>
+              <ion-input type="text" [(ngModel)]="title"></ion-input>
+            </ion-item><br>
+            <ion-item>
+              <ion-label>Data</ion-label>
+              <ion-datetime displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" [(ngModel)]="myDate"></ion-datetime>
+            </ion-item><br>
+            <ion-item>
+              <ion-label>Orario</ion-label>
+              <ion-datetime displayFormat="HH:mm" ></ion-datetime>
+            </ion-item>
+            <ion-list radio-group class="text-center">
+              <h2 class="text-center">Colore Notifica</h2>
+              <ion-row>
+                <ion-col col-3>
+                  <ion-label>Blue</ion-label>
+                  <ion-radio color="primary" value="#488aff"></ion-radio>
+                </ion-col>
+                <ion-col col-3>
+                  <ion-label>Red</ion-label>
+                  <ion-radio color="memo" value="#f44"></ion-radio>
+                </ion-col>
+                <ion-col col-3>
+                  <ion-label>Green</ion-label>
+                  <ion-radio color="note" value="#9b3"></ion-radio>
+                </ion-col>
+                <ion-col col-3>
+                  <ion-label>Orange</ion-label>
+                  <ion-radio color="todo" value="#fb5"></ion-radio>
+                </ion-col>
+              </ion-row>
+            </ion-list>
+            <button ion-button (click)="createAlarm()" color="memo" full>Crea</button>
+          </div>
+          <ion-item class="item-memo" [hidden]="notAdd" (click)="add()">
+            <ion-icon name="md-calendar" item-start color="memo"></ion-icon>
+              <span class="roboto-regular text-center">Aggiungi promemoria</span>
+            <ion-icon name="add" item-end color="secondary"></ion-icon>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
